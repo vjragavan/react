@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+var React = require('react');
+var ReactDom = require('react-dom');
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// <h1> hello world </h1>
+//create a comopenent that will spit out hello world
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+//using create element we will create an element of type h1
+
+var h1Element = React.createElement('h1', null, 'hello world!');
+
+// tell react what to display and where
+// the where is defined the public - index.html which is the page that is displayed
+ReactDom.render(h1Element, document.getElementById('root'));
