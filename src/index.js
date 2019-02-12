@@ -7,13 +7,20 @@ var ReactDom = require('react-dom');
 
 //functional component
 var Component = function (props) {
-  return (<h1> {props.greeting} </h1>);
+  return (
+    <div style={{ color: props.color }}>
+      <h1> {props.greeting}, {props.name}</h1>
+    </div>
+    );
 };
 
 // tell react what to display and where
 // the where is defined the public - index.html which is the page that is displayed
 ReactDom.render(
   //React.createElement(component),
-  <Component greeting="Hello World, Props"/>,
+  <div>
+    <Component greeting="Hello" name="Vijay" color="green"/>
+    <Component greeting="Hello" name="Wright" color="red"/>
+  </div>,
   document.getElementById('root')
 );
